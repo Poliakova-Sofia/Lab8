@@ -135,12 +135,12 @@ double calculateAverage(int matrix[M][N], int rowCount, int colCount) {
 // task 3
 void sort2() {
     cout << " *** Task 3 Sort 2 *** " << endl;
-    const int SIZE = 7;
+    const int SIZE = 10;
     double arr[SIZE];
     int n;
     // reading an array from a file
     readArrayFromFile(arr, n, "sort.txt");
-    // outputting an array to the console
+    // outputting the array
     cout << "Original array:" << endl;
     printArray(arr, n);
     // sort by binary insertion method
@@ -156,9 +156,10 @@ void binaryInsertionSort(double arr[], int n) {
         double key = arr[i];
         int left = 0;
         int right = i - 1;
+        // binary search for a place to insert
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            if (arr[mid] < key)
+            if (arr[mid] > key)
                 left = mid + 1;
             else
                 right = mid - 1;
